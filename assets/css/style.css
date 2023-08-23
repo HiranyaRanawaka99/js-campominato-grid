@@ -39,3 +39,13 @@ ul {
 .azure {
     background-color: azure;
 }
+
+
+.cells-container > .cell-81 {
+    width: calc(100% / 9);
+}
+
+.cells-container > .cell-49 {
+    width: calc(100% / 7);
+}
+

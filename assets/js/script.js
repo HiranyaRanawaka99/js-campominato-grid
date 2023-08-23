@@ -2,11 +2,7 @@
 
 const btnStart = document.getElementById('btn-start');
 const cellsContainer = document.getElementById('cells-container');
-
-const select = document.getElementById('select');
-const easy =  document.getElementById('easy').value;
-const noraml = document.getElementById('noraml').value;
-const expert = document.getElementById('expert').value;
+const difficultySelect = document.getElementById('difficulty');
 
 // Genero la griglia
 btnStart.addEventListener('click', function () {
@@ -19,23 +15,29 @@ btnStart.addEventListener('click', function () {
 // Funzione che genera la griglia
 
 function generateGriglia () {
-     for (let i= 1; i <= 100; i++) {
+    cellsContainer.innerHTML = '';
 
-     const cell= generateCella(i);
-     cellsContainer.append(cell);
+    let cellsTotal = parseInt(difficultySelect.value);
+
+     for (let i = 1; i <= cellsTotal ; i++) { //i è il numero delle celle
+     const generatedcell= generateCell(i, cellsTotal); 
+     cellsContainer.append(generatedcell);
      }
 }
 
-    
-function generateCella (i) {
-        const cell = document.createElement('li');
-        cell.classList.add('cell')
-        cell.innerHTML = i;
 
+// Funzione che genera una cella
+function generateCell (cellText, cellsTotal) {
+        const cell = document.createElement('li');
+        cell.innerHTML = cellText;
+        cell.classList.add('cell')
+        cell.classList.add('cell-' + cellsTotal);
+
+        // cell click
         cell.addEventListener('click', function () {
             this.classList.add('azure');
-            console.log(i);
-        })
+            console.log(this.innerText);
+        });
 
         return cell;
-    }
+}
