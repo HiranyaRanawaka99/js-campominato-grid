@@ -35,4 +35,4 @@ Le validazioni e i controlli possiamo farli anche in un secondo momento.
     - usiamo console.log
 
 ##### Bonus
-1. Creare select e portare i valori nel JS
+1. Creare select e portare i valori nel 
